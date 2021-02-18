@@ -10,24 +10,22 @@ var started = false;
 $("h1").click( function() {
     if (!started) {
         nextSequence();
-        userSlick ();
         started = true;
     }
 })
+
+userSlick ();
 
 // Проверка правильности ответов
 function checkAnswer(currentLevel) {
 
     if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
-        console.log("Success");
-
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function () {
                 nextSequence();
             }, 1000);      
         }
     } else {
-        console.log("Fail");
         wrong(); 
         startOver(); // обнуляем игру и начинаем слушать клавиши для запуска снова
     }
@@ -47,7 +45,7 @@ function nextSequence() {
     var randomChosenColor = buttonColors[randomNumber];
     // добавляем цвет в массив компьютера
     gamePattern.push(randomChosenColor); 
-    $("#" + randomChosenColor).fadeOut(80).fadeIn(80);
+    $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColor);
 }
 
@@ -94,6 +92,5 @@ function wrong(){
 function startOver() {
     level = 0;
     gamePattern = [];
-    userClickedPattern = [];
     started = false;
 }
