@@ -20,6 +20,7 @@ __2. visibility: hidden__
 }
 {% endhighlight %}
 The element stays inflow, but users cannot interact with it. This property is inherited, which means that a child of this element can change the property from invisible to visible.
+
 __3. opacity: 0__
 {% highlight css %}
 .elem {
@@ -27,11 +28,13 @@ __3. opacity: 0__
 }
 {% endhighlight %}
 This CSS rule makes the element transparent. Users can interact with it.
+
 __4. ‘hidden’ attribute__
 {% highlight css %}
 <img hidden src="test.png" alt="test">
 {% endhighlight %}
 Attribute “hidden” makes elements invisible because of default browser rules. Can be controlled by JS, like the “checked” attribute.
+
 __5. The «clip pattern»__
 {% highlight html %}
 <h1 class="visually-hidden">Some title</h1> 
